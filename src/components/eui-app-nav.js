@@ -8,9 +8,6 @@ class AppNav extends HTMLElement {
     }
 
     connectedCallback() {
-        // Render will be called when navItems are set
-        // this.render(); 
-        // this.setupEventListeners();
         this.updateActiveState();
 
         window.addEventListener('popstate', () => this.updateActiveState());

@@ -69,7 +69,6 @@ class NavItem extends HTMLElement {
         const label = this.getAttribute("label") || "";
         const badge = this.getAttribute("badge");
 
-        // Update badge
         const existingBadge = this.shadowRoot.querySelector(".badge");
         if (badge) {
             if (existingBadge) {
@@ -84,11 +83,8 @@ class NavItem extends HTMLElement {
             existingBadge.remove();
         }
 
-        // Update icon
         const iconSlot = this.shadowRoot.querySelector("slot[name='icon']");
         if (iconSlot) {
-            // Check if we have a default icon content or if it's slotted
-            // For this component we usually just replace the default content
             const currentIcon = iconSlot.querySelector("eui-icon");
             if (icon && currentIcon) {
                 if (currentIcon.getAttribute("name") !== icon) {
@@ -101,7 +97,6 @@ class NavItem extends HTMLElement {
             }
         }
 
-        // Update label
         const labelEl = this.shadowRoot.querySelector(".label");
         if (labelEl) labelEl.textContent = label;
     }
