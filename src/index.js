@@ -1,4 +1,5 @@
 // Import styles
+import '../fonts.css';
 import '../styles.css';
 
 // Import and export all components
